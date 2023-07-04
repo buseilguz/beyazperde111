@@ -6,7 +6,12 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
+<<<<<<< HEAD
    
+=======
+    "heroku-postbuild": "cd client && npm install && npm run build"
+    
+>>>>>>> d6844119db153ee44b4f56079fe8926e886b5404
   
    
   },
