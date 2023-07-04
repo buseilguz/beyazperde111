@@ -18,6 +18,13 @@ app.use(express.json())
 app.use("/users",userRouter)
 app.use("/news",newRouter)
 app.use('/tvseries',tvSeriesRouter)
+
+
+app.use(express.static(path.join(__dirname, "/client")));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+});
 app.listen(process.env.PORT ||5000,()=>{ 
     mongoose.connect(process.env.MONGO_URI,{
         useNewUrlParser:true,
